@@ -1,0 +1,33 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is repository for namaste-react live course",
+  "main": "app.js",
+  "source":"index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogesh1006/react-learning.git"
+  },
+  "author": "Yogesh Kasliwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yogesh1006/react-learning/issues"
+  },
+  "homepage": "https://github.com/yogesh1006/react-learning#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist":[
+    "last 2 versions"
+  ]
+}

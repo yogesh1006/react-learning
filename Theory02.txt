@@ -1,0 +1,68 @@
+## Theory 
+
+**Chapter - 02 - Igniting our App **
+
+1. What is `NPM`?
+ - npm is package manager and open source repository of tools(or superpowers or software code) which developers 
+   use to built applications and websites in javascript.
+
+2. What is `Parcel/Webpack`? Why do we need it?
+ - both are bundlers which we use to make applications more performant and faster using parcel-need-zero configuration and 
+   webpacks config's so they work perfectly in production.
+
+3. What is `.parcel-cache`
+ - it is folder which stores information abiut project when parcel builds it, so that 
+   when we rebuild our project again it does not have to re-parse or analyze everything from scratch.
+   (parcel will cache the files and that's the reason parcel is fast in development mode)
+
+4. What is `npx` ?
+  - npx (node package execute) it gets auto install with npm that execute any package we want from 
+    npm registry without even installing that package.
+
+5. What is difference between `dependencies` vs `devDependencies`
+ - dependencies - packages required for our application in production
+ - devDependencies - pacakges developer needs in local or dev environment. 
+
+6. What is Tree Shaking?
+ - which removes unused code or dead-code from our application.
+
+7. What is Hot Module Replacement?
+ - HMR improves the development experience by updating modules in the browser at runtime without needing a whole page refresh. 
+ - This means that application state can be retained as you change small things in your code.
+
+8. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+  - HMR - hot module replacement - as above
+  - File watcher algorithm - written in C++
+  - Caching while development - parcel caches everything it builds to disk folder. and when we update in code so next time only that part od code is rebuild and there dependencies. 
+  - tree shaking
+  - browserlist - which make our app compatible for all browsers.
+  - HTTPS on dev environment
+  - port number chnages automatically when default(1234) one in use.
+  
+9. What is `.gitignore`? What should we add and not add into it?
+  - it allows us to ignore some files (node_modules or .env or build folder or .parcel-cache) to be tracked 
+    by git which are get added or downloaded by server itself while deploying application.
+
+10. What is the difference between `package.json` and `package-lock.json`
+  - package.json contains basic information about the project such as name, description, author, script, and installed dependencies..
+  - package-lock.json is created to lock the dependency installed version and info -> name, dependencies, and locked version of the project. 
+    Also it stores exact versioned dependency tree .
+
+11. Why should I not modify `package-lock.json`?
+  - we should aviod this baecause purpose of this file is to track entire tree of dependencies (and also dependencies of dependencies) and
+    exact version of dependencies and devDependencies.
+
+12. What is `node_modules` ? Is it a good idea to push that on git?
+  - node_modules contains Libraries and packages downloaded using npm or yarn.
+  - we should avoid pushing node_modules to git beacuase all packages we required for the project to be run are downloaded by server while deployment.
+
+13. What is the `dist` folder?
+ - which store production build of our application which we will use for deployment.
+ - command for creating pro-build - npx parcel build index.html 
+
+14. What is `browserlists`
+  - It is option in parcel through which we can make our application compatible on most of the browsers.
+  
+15. Read about dif bundlers: vite, webpack, parcel
+16. Read about: ^ - caret and ~ - tilda
+17. Read about Script types in html (MDN Docs)
