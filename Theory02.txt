@@ -34,10 +34,31 @@
   - HMR - hot module replacement - as above
   - File watcher algorithm - written in C++
   - Caching while development - parcel caches everything it builds to disk folder. and when we update in code so next time only that part od code is rebuild and there dependencies. 
-  - tree shaking
+  - tree shaking - removes all unwanted code or dead code
   - browserlist - which make our app compatible for all browsers.
   - HTTPS on dev environment
   - port number chnages automatically when default(1234) one in use.
+
+  Live class notes : -
+    PARCEL FEATURES - 
+  * HMR - hot module replacement
+  * File watcher algorithm - written in C++
+  * Bundling 
+  * Minifying
+  * Cleaning our code
+  * DEV and prod build
+  * superfast build algorithm
+  * Image optimization
+  * Caching while development
+  * compression
+  * compatible with older versions of browser
+  * HTTPS on dev
+  * port number chnages automatically if we run more than 1 project simentaneously
+  * consistent hashing algorithm
+  * zero config
+  * Transitive dependencies (dependency tree)- only react and parcel is not make your app performent, 
+    parcel itself also depend or use other packages through it does minification,bundling, compression etc.
+
   
 9. What is `.gitignore`? What should we add and not add into it?
   - it allows us to ignore some files (node_modules or .env or build folder or .parcel-cache) to be tracked 
