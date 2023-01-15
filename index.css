@@ -1,11 +1,33 @@
-#container {
-    padding: 1rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px;
 }
 
-.heading1 {
-    letter-spacing: 10px;
+.nav-items {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
 }
 
-.heading2{
-    letter-spacing: 10px;
+.logo {
+  width: 80px;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 1rem;
+}
+.card {
+  width: 205px;
+  border: 1px solid orange;
+  padding: 10px;
+  margin: 1rem;
+  word-wrap: break-word;
+}
+.card > img {
+  width: 100%;
 }

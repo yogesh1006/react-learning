@@ -1,0 +1,33 @@
+## Theory 
+
+**Chapter - 03 - Laying the foundations **
+
+
+1. What is JSX ?
+ - JSX is an HTML-like syntax that you can use with React to (theoretically) 
+   make it easier and more intuitive to create React components. 
+
+2. Superpowers of JSX
+  -   improves readabilty of code for better developer experience
+  -  JSX helps us in keeping our code simpler and elegant when writing large pieces of code.
+  - According to the React docs, most people find it helpful as a visual aid when working with UI inside the JavaScript code. 
+  - Faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+
+3. Role of type attribute in script tag ? what options can I use there ?  
+  - The HTML <script> type Attribute is used to specify the MIME type of script and identify the content of the Tag. 
+    It has a Default value which is “text/javascript”.
+  - Common “media_type” values are: 
+    - text/javascript (this is default)    
+    - text/ecmascript    
+    - application/ecmascript    
+    - application/javascript
+
+4. <TitleComponent />  => Here we are rendering TitleComponent  with self closing tag.
+   <TitleComponent></TitleComponent>    => Here we are rendering TitleComponent and also we can passed some child component inside it like below :
+
+    ` 
+    <TitleComponent>
+      <Titles />
+     </TitleComponent>  
+    `
+    {TitleComponent} => Here we are displaying variable value in JSX.
