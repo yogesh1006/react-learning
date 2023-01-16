@@ -1,53 +1,7 @@
-/** 
-       - Header
-          - logo
-          - header links
-          - cart
-        - Body 
-          - search bar
-          - restaurant list
-            -  restrau cards
-              - image 
-              - name
-              - rating
-              - cuisins tags
-        - Footer  
-          - ref links
-          - copyright
-        
-      */
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const IMG_CDN_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-// JSX =>  React.createElement => object => object converted into HTML(DOM) using ReactDOM library
-
-//creating react element h2
-const Title = () => (
-  <a href="/">
-    <img
-      className="logo"
-      src="https://st2.depositphotos.com/3867453/5508/v/600/depositphotos_55081557-stock-illustration-food-word-sign-logo-icon.jpg"
-      alt="logo"
-    />
-  </a>
-);
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <ul className="nav-items">
-        <li>Home</li>
-        <li>Contact</li>
-        <li>About</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  );
-};
-//Config Driven UI
-
-const restrautList = [
+export const restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -778,48 +732,3 @@ const restrautList = [
     subtype: "basic",
   },
 ];
-
-const RestaurantCard = (props) => {
-  const {cloudinaryImageId, name, cuisines, avgRating} = props;
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(",")}</h3>
-      <h4>{avgRating} Star</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restrautList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <div>Footer</div>;
-};
-
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-//creating root
-const root = ReactDOM.createRoot(document.getElementById("root"));
-//passing a react element or react Functional Component inside root(or in DOM)
-root.render(<App />);

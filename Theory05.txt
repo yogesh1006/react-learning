@@ -1,0 +1,40 @@
+## Theory 
+
+**Chapter - 05 - Let's get Hooked! **
+
+1. What is diffrence between Named export, default export and * as export ?
+Ans:- ES6 provides two wys to export module from file :
+      1) Named export 
+        - one can have multiple named exports per file
+        - we can import them using surrounded braces and name of imported module should be same as exported module
+        - we can also import named exports as object -
+           import * as obj from "./MyComponent.js"
+        - we can use obj.MyComponent1 like that to access modules.
+
+      2) Default export
+        - one file can have only one default export
+        - when we import we have specify name
+        - naming of import is completely independent of default export and we can use any name we like.
+
+-- From Documentation --
+Named exports are useful to export several values. 
+During the import, one will be able to use the same name to refer to the corresponding value.
+
+Concerning the default export, there is only a single default export per module. 
+A default export can be a function, a class, an object or anything else.
+This value is to be considered as the “main” exported value since it will be the simplest to import.
+       
+2. What is importance of config.js or constants.js file? 
+Ans: In our application, we have lots of constants (strings, json, image common url, etc.). 
+     By using config.json file, we can store all that constant values
+
+3. What are React Hooks?
+Ans: - React hooks are just normal functions which React uses for managing state in component also we can use to isolate reusable part from a functional component.
+    - Hooks can be stateful and can manage side-effects. React provides a bunch of standard in-built hooks: useState : To manage states.
+    - Returns a stateful value and an updater function to update it.
+
+4. Why do we need useState Hook ?
+Ans: - useState is used to create local state variable instead of local variable. 
+     - React can’t detect normal written local variable as we used to do in JavaScript. 
+     So to keep variable in sync with UI(to achieve 2 way data binding) we have to 
+     create state variable with the help of useState() hook as React can detect it easily while rendering.
