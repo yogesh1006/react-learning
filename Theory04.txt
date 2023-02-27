@@ -72,7 +72,7 @@ Refer: https://reactjs.org/docs/components-and-props.html https://www.freecode
 
 
 11. What is Config Driven UI?
-Ans:- Mostly bigger companies like Swiggy nowadays follows Project based on Config Driven UI.
+Ans:- Mostly bigger companies like Swiggy nowadays follows Project based on Config (JSON Data) Driven UI.
 Is the concept where backend data bind with UI conditionally.
 Here back end decides which UI we need to display as per the condition.
 
