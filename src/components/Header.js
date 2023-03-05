@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Title = () => {
   return (
     <a href="/">
@@ -11,6 +13,12 @@ const Title = () => {
 };
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const logoutHandler=() => setIsLoggedIn(!isLoggedIn)
+
+  const loginHandler = () => setIsLoggedIn(!isLoggedIn)
+
   return (
     <div className="header">
       <Title />
@@ -19,6 +27,7 @@ const Header = () => {
         <li>Contact</li>
         <li>About</li>
         <li>Cart</li>
+        {isLoggedIn ? <li onClick={logoutHandler}>Logout</li> : <li onClick={loginHandler}>Login</li>}
       </ul>
     </div>
   );

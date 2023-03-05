@@ -40,7 +40,7 @@ const Body = () => {
   //not render compoenent -> Early return
   if (!allRestaurants) return null;
 
-  if(filteredRestaurants.length === 0) return <h1>No restaurant for filter!!!</h1>
+  // if(filteredRestaurants.length === 0) return <h1>No restaurant for filter!!!</h1>
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />
