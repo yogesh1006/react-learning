@@ -3,7 +3,7 @@
 **Chapter - 05 - Let's get Hooked! **
 
 1. What is diffrence between Named export, default export and * as export ?
-Ans:- ES6 provides two wys to export module from file :
+Ans:- ES6 provides two ways to export module from file :
       1) Named export 
         - one can have multiple named exports per file
         - we can import them using surrounded braces and name of imported module should be same as exported module
