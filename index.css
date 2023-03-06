@@ -32,9 +32,13 @@
   width: 100%;
 }
 
-.shimmer-card{
+.shimmer-card {
   width: 205px;
   height: 205px;
   margin: 1rem;
   background: lightgray;
+}
+
+.menu {
+  display: flex;
 }

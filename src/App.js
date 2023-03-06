@@ -4,14 +4,16 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AboutUs from "./components/About";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contact from "./components/Contact";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Body />
+      <Outlet />
       <Footer />
     </>
   );
@@ -19,17 +21,34 @@ const App = () => {
 
 const appRouter = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     element: <App />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/cart",
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+     },
+    ],
   },
-  {
-    path:"/about",
-    element: <AboutUs />
-  }
-])
+]);
 
 //creating root
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //passing a react element or react Functional Component inside root(or in DOM)
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);
