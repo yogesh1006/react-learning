@@ -3,23 +3,14 @@ import { Link } from "react-router-dom";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-
-function filterData(text, hotels) {
-  if (text.length > 0) {
-    const filteredData = hotels.filter((hotel) =>
-      hotel?.data?.name?.toLowerCase()?.includes(text?.toLowerCase())
-    );
-    return filteredData;
-  } else {
-    return hotels;
-  }
-}
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/hooks/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  const isOnline = useOnline();
   useEffect(() => {
     fetchRestaurants();
   }, []);
@@ -38,6 +29,9 @@ const Body = () => {
     }
   };
 
+  if (!isOnline) {
+    return <h1>Offline, Please check your internet connection!!! </h1>;
+  }
   //not render compoenent -> Early return
   if (!allRestaurants) return null;
 
@@ -69,7 +63,7 @@ const Body = () => {
       <div className="restaurant-list">
         {filteredRestaurants?.map((item) => {
           return (
-            <Link to={"/restaurant/" + item.data.id} key={item.data.id} >
+            <Link to={"/restaurant/" + item.data.id} key={item.data.id}>
               <RestaurantCard {...item.data} />
             </Link>
           );

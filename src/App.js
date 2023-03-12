@@ -10,6 +10,13 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 
+//chunking
+// code spiltting
+// dynamic bundling
+// lazy loading
+//  On demand loading
+// Dynamic import 
+
 const App = () => {
   return (
     <>
@@ -35,7 +42,7 @@ const appRouter = createBrowserRouter([
         element: <About />,
         children: [
           {
-            path: "profile",  //localhost:1234/about/profile
+            path: "profile", //localhost:1234/about/profile
             element: <Profile />,
           },
         ],
