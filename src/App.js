@@ -15,7 +15,7 @@ import Profile from "./components/Profile";
 // dynamic bundling
 // lazy loading
 //  On demand loading
-// Dynamic import 
+// Dynamic import
 
 const App = () => {
   return (
@@ -34,10 +34,6 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: "/",
-        element: <Body />,
-      },
-      {
         path: "/about",
         element: <About />,
         children: [
@@ -46,6 +42,10 @@ const appRouter = createBrowserRouter([
             element: <Profile />,
           },
         ],
+      },
+      {
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/contact",

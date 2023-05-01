@@ -1,17 +1,46 @@
 import { Outlet } from "react-router-dom";
-import ProfileFunctionalComponent from "./Profile";
 import ProfileClassComponent from "./ProfileClass";
+import { Component } from "react";
 
-const About = () => {
-  return (
-    <div>
-      <div>
+class About extends Component {
+  constructor(props) {
+    super(props);
+
+    // console.log("Parent- Constructor");
+  }
+
+  componentDidMount() {
+    // console.log("Parent- componentDidMount");
+  }
+
+  render() {
+    // console.log("Parent- Render");
+
+    return (
+      <>
         <h1>About Us Page</h1>
-      </div>
-      <ProfileFunctionalComponent name="Yogesh function"/>
-      <ProfileClassComponent name="Yogesh Class"/>
-    </div>
-  );
-};
+        <p>This is Namste React Live course - let's get classy !!</p>
+        {/* <Outlet /> */}
+        <ProfileClassComponent name="First Child" />
+        {/* <ProfileClassComponent name="Second Child" /> */}
+      </>
+    );
+  }
+}
 
 export default About;
+
+/**
+ *  Parent Constructor
+ *  Parent Render
+ *      First child - Constructor
+ *      first child  - render
+ *      Second Child -  constructor
+ *      second Child  - Render
+ * 
+ *      DOM Updated For childern - 
+ * 
+ *      First Child  - ComponentDidMount
+ *      Second Child  - CompoenentDidMount
+ *  Parent - ComponentDidMount
+ */
